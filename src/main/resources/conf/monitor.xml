@@ -1,0 +1,24 @@
+<monitor>
+    <name>BusinessMonitor</name>
+    <type>managed</type>
+    <enabled>true</enabled>
+    <description>Monitors a Business Metrics</description>
+    <monitor-configuration>
+    </monitor-configuration>
+    <monitor-run-task>
+        <name>Buisness Monirot Run Task</name>
+        <display-name>Buisness Run Task</display-name>
+        <description>Buisness Run Task</description>
+        <type>java</type>
+        <execution-style>periodic</execution-style>
+        <execution-frequency-in-seconds>60</execution-frequency-in-seconds>
+        <execution-timeout-in-secs>60</execution-timeout-in-secs>
+        <task-arguments>
+            <argument name="config-file" is-required="true" default-value="monitors/BusinessMonitor/config.yml" />
+        </task-arguments>
+        <java-task>
+            <classpath>business-monitoring-extension.jar</classpath>
+            <impl-class>com.appdynamics.extensions.business.BusinessMonitor</impl-class>
+        </java-task>
+    </monitor-run-task>
+</monitor>

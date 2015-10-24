@@ -1,0 +1,16 @@
+# List of Commerce Servers where to pull data from
+servers:
+  - host: "localhost"
+    port: 9999
+    password: "SJ5b2m7d1$354"
+    displayName: "Market Place"
+
+# These are the xPath Expression, path refers to the metric name, content the metric value
+    metricPaths: [
+        /Metrics/AuctionDuration/text() /Metrics/AuctionDuration/@name ,
+        /Metrics/NumberOfParticipants/text() /Metrics/NumberOfParticipants/@name,
+        /Metrics/TransactionAmount/text() /Metrics/TransactionAmount/@name
+    ]
+
+#prefix used to show up metrics in AppDynamics
+metricPrefix:  "Custom Metrics|Commerce Performance|"
